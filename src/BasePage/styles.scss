@@ -1,0 +1,95 @@
+//@font-face {
+//  font-family: "Roboto";
+//  src: url("/Fonts/RobotoMono-Medium.ttf") format("truetype");
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+@font-face {
+  font-family: "ECAMFontRegular";
+  src: url("../Fonts/ECAMFontRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bg {
+  fill: var(--displayBackground);
+  width: 1024px;
+  height: 1024px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-family: "ECAMFontRegular" !important;
+
+  &__big {
+    &__left {
+      position: absolute;
+      left: 4%;
+      text-align: left;
+      &__label {
+        left: 8%;
+      }
+    }
+    &__right {
+      position: absolute;
+      right: 4%;
+      text-align: right;
+      &__label {
+        right: 8%;
+      }
+    }
+  }
+  &__small {
+    font-size: 4.2vw;
+    &__left {
+      position: absolute;
+      left: 4%;
+      text-align: left;
+      &__label {
+        left: 8%;
+      }
+    }
+    &__right {
+      position: absolute;
+      right: 4%;
+      text-align: right;
+      &__label {
+        right: 8%;
+      }
+    }
+  }
+}
+
+.white {
+  fill: var(--mcduWhite);
+}
+
+.inop {
+  fill: var(--mcduLightGrey);
+}
+
+.cyan {
+  fill: var(--mcduCyan);
+}
+
+.yellow {
+  fill: var(--mcduYellow);
+}
+
+.green {
+  fill: var(--mcduGreen);
+}
+
+.amber {
+  fill: var(--mcduAmber);
+}
+
+.red {
+  fill: var(--mcduRed);
+}
+
+.magenta {
+  fill: var(--mcduMagenta);
+}
