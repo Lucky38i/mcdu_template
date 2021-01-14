@@ -18,47 +18,38 @@
   height: 100%;
 }
 
-rect {
-  fill: var(--displayBackground);
-}
-
 text {
   font-family: "ECAMFontRegular" !important;
   fill: var(--mcduWhite);
 }
 
-.big {
-  &__left {
-    left: 4%;
-    text-align: left;
-    &__label {
-      left: 8%;
-    }
-  }
-  &__right {
-    right: 4%;
-    text-align: right;
-    &__label {
-      right: 8%;
-    }
-  }
-}
-
 .left {
+  text-anchor: start;
   &__small {
-    font-size: 16px;
+    @extend .left;
+    font-size: 4.2vw;
+    letter-spacing: 0.6vw;
+    line-height: 5.8vw;
   }
   &__big {
-    font-size: 20px;
+    @extend .left;
+    font-size: 5.8vw;
+    letter-spacing: normal;
   }
 }
 
 .right {
+  text-anchor: end;
   &__small {
-    font-size: 16px;
+    @extend .right;
+    font-size: 4.2vw;
+    letter-spacing: 0.6vw;
+    line-height: 5.8vw;
   }
   &__big {
-    font-size: 20px;
+    @extend .right;
+    font-size: 5.8vw;
+    letter-spacing: normal;
   }
 }
 

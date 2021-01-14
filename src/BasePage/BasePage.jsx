@@ -58,7 +58,7 @@ const McduLabels = {
     R1: {
         text: 'label2',
         class: 'big',
-        color: 'amber',
+        color: 'white',
     },
     R2: {
         text: 'label3',
@@ -86,76 +86,76 @@ const McduText = {
     L0: {
         text: 'LEFT DATA 1',
         class: 'small',
-        color: 'amber',
+        color: 'green',
     },
     L1: {
         text: 'LEFT DATA 2',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     L2: {
         text: 'LEFT DATA 3',
         class: 'small',
-        color: 'amber',
+        color: 'green',
     },
     L3: {
         text: 'LEFT DATA 4',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     L4: {
         text: 'LEFT DATA 5',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     L5: {
         text: 'LEFT DATA 6',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     R0: {
         text: 'RIGHT DATA 1',
         class: 'small',
-        color: 'amber',
+        color: 'green',
     },
     R1: {
         text: 'RIGHT DATA 2',
         class: 'small',
-        color: 'AMBER',
+        color: 'green',
     },
     R2: {
         text: 'RIGHT DATA 3',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     R3: {
         text: 'RIGHT DATA 4',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     R4: {
         text: 'RIGHT DATA 5',
         class: 'small',
-        color: 'white',
+        color: 'green',
     },
     R5: {
         text: 'RIGHT DATA 6',
         class: 'small',
-        color: 'cyan',
+        color: 'green',
     },
 }
 
 const Label = ({side, text, color, size}) => {
     const textClass = `${side}__${size}`
     return (
-        <text y="-6%" fill={color} className={textClass}>{text}</text>
+        <text y="-6%" className={textClass}><tspan className={color}>{text}</tspan></text>
     )
 }
 
 const Field = ({side, text, color, size}) => {
     const textClass = `${side}__${size}`
     return (
-        <text fill={color} className={textClass}>{text}</text>
+        <text className={textClass}><tspan className={color}>{text}</tspan></text>
     )
 }
 
@@ -200,29 +200,29 @@ const RightSide = ({labels, data}) => {
     const side = "right";
     return (
         <g id="right_side">
-            <g transform="translate(512 256)">
-                <Label side={side} color={labels.R0.color} text={labels.R0.text} />
-                <Field side={side} color={data.R0.color} text={data.R0.text}/>
+            <g transform="translate(1024 256)">
+                <Label side={side} color={labels.R0.color} text={labels.R0.text} size={labels.R0.class}/>
+                <Field side={side} color={data.R0.color} text={data.R0.text} size={data.R0.class}/>
             </g>
-            <g transform="translate(512 384)">
-                <Label side={side} color={labels.R1.color} text={labels.R1.text} />
-                <Field side={side} color={data.R1.color} text={data.R1.text}/>
+            <g transform="translate(1024 384)">
+                <Label side={side} color={labels.R1.color} text={labels.R1.text} size={labels.R1.class}/>
+                <Field side={side} color={data.R1.color} text={data.R1.text} size={data.R1.class} />
             </g>
-            <g transform="translate(512 512)">
-                <Label side={side} color={labels.R2.color} text={labels.R2.text} />
-                <Field side={side} color={data.R2.color} text={data.R2.text}/>
+            <g transform="translate(1024 512)">
+                <Label side={side} color={labels.R2.color} text={labels.R2.text} size={labels.R2.class}/>
+                <Field side={side} color={data.R2.color} text={data.R2.text} size={data.R2.class}/>
             </g>
-            <g transform="translate(512 640)">
-                <Label side={side} color={labels.R3.color} text={labels.R4.text} />
-                <Field side={side} color={data.R3.color} text={data.R3.text}/>
+            <g transform="translate(1024 640)">
+                <Label side={side} color={labels.R3.color} text={labels.R3.text} size={labels.R3.class}/>
+                <Field side={side} color={data.R3.color} text={data.R3.text} size={data.R3.class}/>
             </g>
-            <g transform="translate(512 768)">
-                <Label side={side} color={labels.R4.color} text={labels.R5.text} />
-                <Field side={side} color={data.R4.color} text={data.R4.text}/>
+            <g transform="translate(1024 768)">
+                <Label side={side} color={labels.R4.color} text={labels.R4.text} size={labels.R4.class}/>
+                <Field side={side} color={data.R4.color} text={data.R4.text} size={data.R4.class}/>
             </g>
-            <g transform="translate(512 896)">
-                <Label side={side} color={labels.R5.color} text={labels.R5.text} />
-                <Field side={side} color={data.R5.color} text={data.R5.text}/>
+            <g transform="translate(1024 896)">
+                <Label side={side} color={labels.R5.color} text={labels.R5.text} size={labels.R5.class}/>
+                <Field side={side} color={data.R5.color} text={data.R5.text} size={data.R5.class}/>
             </g>
         </g>
     )
