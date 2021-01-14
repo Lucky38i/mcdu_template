@@ -21,210 +21,216 @@ import React from 'react'
 
 const McduLabels = {
     L0: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label1',
+        class: 'big',
         color: 'white',
     },
     L1: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label2',
+        class: 'big',
         color: 'white',
     },
     L2: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label3',
+        class: 'big',
         color: 'white',
     },
     L3: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label4',
+        class: 'big',
         color: 'white',
     },
     L4: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label5',
+        class: 'big',
         color: 'white',
     },
     L5: {
-        text: '',
-        class: 'text__small__left__label',
+        text: 'label6',
+        class: 'big',
         color: 'white',
     },
     R0: {
-        text: 'SELECT\xa0',
-        class: 'text__small__right__label',
+        text: 'label1',
+        class: 'big',
         color: 'white',
     },
     R1: {
-        text: '',
-        class: 'text__small__right__label',
+        text: 'label2',
+        class: 'big',
         color: 'amber',
     },
     R2: {
-        text: '',
-        class: 'text__small__right',
+        text: 'label3',
+        class: 'big',
         color: 'white',
     },
     R3: {
-        text: '',
-        class: '',
-        color: '',
+        text: 'label4',
+        class: 'big',
+        color: 'white',
     },
     R4: {
-        text: '',
-        class: 'text__small__right__label',
-        color: 'inop',
+        text: 'label5',
+        class: 'big',
+        color: 'white',
     },
     R5: {
-        text: '',
-        class: 'text__small__right__label',
+        text: 'label6',
+        class: 'big',
         color: 'white',
     },
 };
 
 const McduText = {
     L0: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 1',
+        class: 'small',
         color: 'amber',
     },
     L1: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 2',
+        class: 'small',
         color: 'white',
     },
     L2: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 3',
+        class: 'small',
         color: 'amber',
     },
     L3: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 4',
+        class: 'small',
         color: 'white',
     },
     L4: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 5',
+        class: 'small',
         color: 'white',
     },
     L5: {
-        text: '',
-        class: 'text__small__left',
+        text: 'LEFT DATA 6',
+        class: 'small',
         color: 'white',
     },
     R0: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 1',
+        class: 'small',
         color: 'amber',
     },
     R1: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 2',
+        class: 'small',
         color: 'AMBER',
     },
     R2: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 3',
+        class: 'small',
         color: 'white',
     },
     R3: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 4',
+        class: 'small',
         color: 'white',
     },
     R4: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 5',
+        class: 'small',
         color: 'white',
     },
     R5: {
-        text: '',
-        class: 'text__small__right',
+        text: 'RIGHT DATA 6',
+        class: 'small',
         color: 'cyan',
     },
 }
 
-const FieldObject = (props) => {
-    const {
-        objectText,
-        objectClass,
-        objectColor,
-    } = props;
+const Label = ({side, text, color, size}) => {
+    const textClass = `${side}__${size}`
     return (
-        <text className={objectClass}>
-            <text className={objectColor}>
-                {objectText}
-            </text>
-        </text>
-    );
-};
+        <text y="-6%" fill={color} className={textClass}>{text}</text>
+    )
+}
 
-FieldObject.propTypes = {
-    objectText: PropTypes.string.isRequired,
-    objectClass: PropTypes.string,
-    objectColor: PropTypes.string,
-};
-
-const LineObject = (props) => {
-    const {
-        leftLabel,
-        rightLabel,
-        leftField,
-        rightField,
-    } = props;
+const Field = ({side, text, color, size}) => {
+    const textClass = `${side}__${size}`
     return (
-        <div>
-            <div>
-                <FieldObject
-                    objectText={leftLabel.text}
-                    objectClass={leftLabel.class}
-                    objectColor={leftLabel.color}
-                />
-                <FieldObject
-                    objectText={rightLabel.text}
-                    objectClass={rightLabel.class}
-                    objectColor={rightLabel.color}
-                />
-            </div>
-            <div>
-                <FieldObject
-                    objectText={leftField.text}
-                    objectClass={leftField.class}
-                    objectColor={leftField.color}
-                />
-                <FieldObject
-                    objectText={rightField.text}
-                    objectClass={rightField.class}
-                    objectColor={rightField.color}
-                />
-            </div>
-        </div>
-    );
+        <text fill={color} className={textClass}>{text}</text>
+    )
+}
+
+const LeftSide = ({labels, data}) => {
+    const side = "left";
+    return (
+        <g id="left_side">
+            <g transform="translate(0 256)">
+                <Label side={side} color={labels.L0.color} text={labels.L0.text} size={labels.L0.class} />
+                <Field side={side} color={data.L0.color} text={data.L0.text} size={data.L0.class}/>
+            </g>
+            <g transform="translate(0 384)">
+                <Label side={side} color={labels.L1.color} text={labels.L1.text} size={labels.L1.class}/>
+                <Field side={side} color={data.L1.color} text={data.L1.text} size={data.L1.class}/>
+            </g>
+            <g transform="translate(0 512)">
+                <Label side={side} color={labels.L2.color} text={labels.L2.text} size={labels.L2.class}/>
+                <Field side={side} color={data.L2.color} text={data.L2.text} size={data.L2.class}/>
+            </g>
+            <g transform="translate(0 640)">
+                <Label side={side} color={labels.L3.color} text={labels.L3.text} size={labels.L3.class}/>
+                <Field side={side} color={data.L3.color} text={data.L3.text} size={data.L3.class}/>
+            </g>
+            <g transform="translate(0 768)">
+                <Label side={side} color={labels.L4.color} text={labels.L4.text} size={labels.L4.class}/>
+                <Field side={side} color={data.L4.color} text={data.L4.text} size={data.L4.class}/>
+            </g>
+            <g transform="translate(0 896)">
+                <Label side={side} color={labels.L5.color} text={labels.L5.text} size={labels.L5.class}/>
+                <Field side={side} color={data.L5.color} text={data.L5.text} size={data.L5.class}/>
+            </g>
+        </g>
+    )
+}
+
+LeftSide.propTypes = {
+    labels: PropTypes.objectOf(PropTypes.shape(McduLabels)),
+    data: PropTypes.objectOf(PropTypes.shape(McduText)),
 };
 
-LineObject.propTypes = {
-    leftLabel: PropTypes.shape({
-        text: PropTypes.string,
-        class: PropTypes.string,
-        color: PropTypes.string,
-    }),
-    rightLabel: PropTypes.shape({
-        text: PropTypes.string,
-        class: PropTypes.string,
-        color: PropTypes.string,
-    }),
-    leftField: PropTypes.shape({
-        text: PropTypes.string,
-        class: PropTypes.string,
-        color: PropTypes.string,
-    }),
-    rightField: PropTypes.shape({
-        text: PropTypes.string,
-        class: PropTypes.string,
-        color: PropTypes.string,
-    }),
+const RightSide = ({labels, data}) => {
+    const side = "right";
+    return (
+        <g id="right_side">
+            <g transform="translate(512 256)">
+                <Label side={side} color={labels.R0.color} text={labels.R0.text} />
+                <Field side={side} color={data.R0.color} text={data.R0.text}/>
+            </g>
+            <g transform="translate(512 384)">
+                <Label side={side} color={labels.R1.color} text={labels.R1.text} />
+                <Field side={side} color={data.R1.color} text={data.R1.text}/>
+            </g>
+            <g transform="translate(512 512)">
+                <Label side={side} color={labels.R2.color} text={labels.R2.text} />
+                <Field side={side} color={data.R2.color} text={data.R2.text}/>
+            </g>
+            <g transform="translate(512 640)">
+                <Label side={side} color={labels.R3.color} text={labels.R4.text} />
+                <Field side={side} color={data.R3.color} text={data.R3.text}/>
+            </g>
+            <g transform="translate(512 768)">
+                <Label side={side} color={labels.R4.color} text={labels.R5.text} />
+                <Field side={side} color={data.R4.color} text={data.R4.text}/>
+            </g>
+            <g transform="translate(512 896)">
+                <Label side={side} color={labels.R5.color} text={labels.R5.text} />
+                <Field side={side} color={data.R5.color} text={data.R5.text}/>
+            </g>
+        </g>
+    )
+}
 
+RightSide.propTypes = {
+    labels: PropTypes.objectOf(PropTypes.shape(McduLabels)),
+    data: PropTypes.objectOf(PropTypes.shape(McduText)),
 };
 
 const BasePage = (props) => {
@@ -233,44 +239,10 @@ const BasePage = (props) => {
         data,
     } = props;
     return (
-        <div className="bg">
-            <LineObject
-                leftLabel={labels.L0}
-                rightLabel={labels.R0}
-                leftField={data.L0}
-                rightField={data.R0}
-            />
-            <LineObject
-                leftLabel={labels.L1}
-                rightLabel={labels.R1}
-                leftField={data.L1}
-                rightField={data.R1}
-            />
-            <LineObject
-                leftLabel={labels.L2}
-                rightLabel={labels.R2}
-                leftField={data.L2}
-                rightField={data.R2}
-            />
-            <LineObject
-                leftLabel={labels.L3}
-                rightLabel={labels.R3}
-                leftField={data.L3}
-                rightField={data.R3}
-            />
-            <LineObject
-                leftLabel={labels.L4}
-                rightLabel={labels.R4}
-                leftField={data.L4}
-                rightField={data.R4}
-            />
-            <LineObject
-                leftLabel={labels.L5}
-                rightLabel={labels.R5}
-                leftField={data.L5}
-                rightField={data.R5}
-            />
-        </div>
+        <g id="page">
+            <LeftSide labels={labels} data={data} />
+            <RightSide labels={labels} data={data} />
+        </g>
     );
 };
 

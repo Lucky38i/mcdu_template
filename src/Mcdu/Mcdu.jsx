@@ -3,7 +3,7 @@ import { BasePage, McduLabels, McduText }  from "../BasePage/BasePage";
 
 const Mcdu = () => {
     const [labels, setLabels] = useState(McduLabels);
-    const [text, setText] = useState(McduText);
+    const [text, _] = useState(McduText);
 
     useEffect(() => {
         setLabels((prevState) => ({
@@ -30,6 +30,7 @@ const Mcdu = () => {
             },
         }));
     }, []);
+
     return (
         <BasePage data={text} labels={labels} />
     );

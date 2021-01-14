@@ -5,7 +5,7 @@ import './styles.scss'
 
 const App = () => {
   return (
-      <svg className="main-wrapper" viewBox="0 0 1024 1024">
+      <svg className="main-wrapper" viewBox="0 0 1024 1024" width="1024" height="1024">
           <Mcdu />
       </svg>
   );
