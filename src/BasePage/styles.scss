@@ -27,14 +27,12 @@ text {
   text-anchor: start;
   &__small {
     @extend .left;
-    font-size: 4.2vw;
-    letter-spacing: 0.6vw;
-    line-height: 5.8vw;
+    font-size: 3em;
+    letter-spacing: 0.3em;
   }
   &__big {
     @extend .left;
-    font-size: 5.8vw;
-    letter-spacing: normal;
+    font-size: 4em;
   }
 }
 
@@ -42,14 +40,12 @@ text {
   text-anchor: end;
   &__small {
     @extend .right;
-    font-size: 4.2vw;
-    letter-spacing: 0.6vw;
-    line-height: 5.8vw;
+    font-size: 3em;
+    letter-spacing: 0.3em;
   }
   &__big {
     @extend .right;
-    font-size: 5.8vw;
-    letter-spacing: normal;
+    font-size: 4em;
   }
 }
 

@@ -10,8 +10,13 @@
   text-anchor: start;
   font-family: "ECAMFontRegular" !important;
   fill: var(--mcduWhite);
-  font-size: 5.8vw;
+  font-size: 4em;
   letter-spacing: normal;
+}
+
+.arrow {
+  @extend .scratchpad;
+  text-anchor: end;
 }
 
 .white {

@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { BasePage, McduLabels, McduText }  from "../BasePage/BasePage";
+import {AppContext} from "../index";
 
 const Mcdu = () => {
     const [labels, setLabels] = useState(McduLabels);
-    const [text, _] = useState(McduText);
+    const [text, ] = useState(McduText);
+    const [scratchpad, , , setTitle] = useContext(AppContext)
 
     useEffect(() => {
+        setTitle('MCDU MENU');
+
         setLabels((prevState) => ({
             ...prevState,
             L0: {

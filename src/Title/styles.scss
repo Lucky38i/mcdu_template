@@ -10,8 +10,12 @@
   font-family: "ECAMFontRegular" !important;
   fill: var(--mcduWhite);
   text-anchor: middle;
-  font-size: 5.8vw;
+  font-size: 4em;
   letter-spacing: normal;
+}
+.arrow {
+  @extend .title;
+  text-anchor: end;
 }
 
 .white {
